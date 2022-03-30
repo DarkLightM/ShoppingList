@@ -1,0 +1,8 @@
+com\example\shoppinglist\controller\CreateController.class
+com\example\shoppinglist\controller\BuyController.class
+com\example\shoppinglist\controller\DeleteController.class
+com\example\shoppinglist\model\Product.class
+com\example\shoppinglist\ShoppingList.class
+com\example\shoppinglist\controller\UpdateController.class
+com\example\shoppinglist\controller\ViewController.class
+com\example\shoppinglist\ShoppingListApplication.class

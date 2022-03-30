@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Item</title>
+</head>
+<body>
+
+<form th:action="${'/list/'+item.getId()+'/update'}" th:method="post">
+    <input type="text" name="text" th:text="${item.getText()}">
+    <input type="submit" value="Edit" >
+    <button onclick="location.href='/list'" type="button">Back to list</button>
+</form>
+</body>
+</html>

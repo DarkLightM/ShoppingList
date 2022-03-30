@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:action="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+
+<form action="/list/new" method="get">
+    <input type="submit" value="Add new">
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>OpenedShoppingList</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${list.empty}">
+        <td>
+            List is empty
+        </td>
+    </tr>
+    <tr th:each="item : ${list}">
+        <td><span th:text="${item.getId()}"> Number in list </span></td>
+        <td><span th:text="${item.getText()}"> Product </span></td>
+        <td th:switch="${item.getIsBought()}">
+            <span th:case="${true}"> is bought </span>
+            <span th:case="${false}"> isn't bought </span>
+        </td>
+        <td>
+            <form th:action="${'/list/'+item.getId()+'/buy'}" th:method="post">
+                <input type="submit" value="Buy">
+            </form>
+        </td>
+        <td>
+            <form th:action="${'/list/'+item.getId()}" th:method="get">
+                <input type="submit" value="Open">
+            </form>
+        </td>
+        <td>
+            <form th:action="${'/list/'+item.getId()}" th:method="post">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
